@@ -1,9 +1,10 @@
-`encdec` is a simple golang library for encrypting and decrypting data.
+```encdec```` is a simple golang library for encrypting and decrypting data.
 
 ## Installation
-    To install the package, run:
+
+To install the package, run:
 ```bash
-    go get -v github.com/deeper-x/encdec
+go get -v github.com/deeper-x/encdec
 ```
 
 ## Usage
