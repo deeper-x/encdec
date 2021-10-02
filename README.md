@@ -16,7 +16,7 @@ import "github.com/deeper-x/encdec"
 key := "<YOUR PASSWD>"
 _, err := encdec.Encrypt("/path/to/resource", []byte(key))
 if err != nil {
-	t.Error(err)
+	panic(err)
 }
 ```
 
@@ -27,7 +27,7 @@ import "github.com/deeper-x/encdec"
 key := "<YOUR PASSWD>"
 _, err := encdec.Decrypt("/path/to/resource", []byte(key))
 if err != nil {
-	t.Error(err)
+	panic(err)
 }
 ```
 
