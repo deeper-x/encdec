@@ -1,4 +1,4 @@
-```encdec```` is a simple golang library for encrypting and decrypting data.
+```encdec``` is a simple golang library for encrypting and decrypting data.
 
 ## Installation
 
