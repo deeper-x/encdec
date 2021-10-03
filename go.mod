@@ -1,4 +1,4 @@
-module github.com/deeper-x/encdec
+module github.com/deeper-x/securefile
 
 go 1.17
 
