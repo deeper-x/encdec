@@ -4,17 +4,17 @@
 
 To install the package, run:
 ```bash
-go get -v github.com/deeper-x/encdec
+go get -v github.com/deeper-x/securefile
 ```
 
 ## Usage
 
 To encrypt data, run:
 ```go
-import "github.com/deeper-x/encdec"
+import "github.com/deeper-x/securefile"
 
 key := "<YOUR PASSWD>"
-_, err := encdec.Encrypt("/path/to/resource", []byte(key))
+_, err := securefile.Encrypt("/path/to/resource", []byte(key))
 if err != nil {
 	panic(err)
 }
@@ -22,10 +22,10 @@ if err != nil {
 
 To decrypt data, run:
 ```go
-import "github.com/deeper-x/encdec"
+import "github.com/deeper-x/securefile"
             
 key := "<YOUR PASSWD>"
-_, err := encdec.Decrypt("/path/to/resource", []byte(key))
+_, err := securefile.Decrypt("/path/to/resource", []byte(key))
 if err != nil {
 	panic(err)
 }
