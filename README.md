@@ -1,4 +1,4 @@
-```encdec``` is a simple golang library for encrypting and decrypting data.
+```securefile``` is a simple golang library for encrypting and decrypting data.
 
 ## Installation
 
