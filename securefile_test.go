@@ -1,4 +1,4 @@
-package encdec
+package securefile
 
 import (
 	"testing"
