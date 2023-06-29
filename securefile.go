@@ -9,7 +9,6 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -25,7 +24,7 @@ func Encrypt(source string, password []byte) (bool, error) {
 	}
 
 	// read file
-	plaintext, err := ioutil.ReadFile(source)
+	plaintext, err := os.ReadFile(source)
 
 	if err != nil {
 		return false, err
@@ -82,7 +81,7 @@ func Decrypt(source string, password []byte) (bool, error) {
 	}
 
 	// read file
-	ciphertext, err := ioutil.ReadFile(source)
+	ciphertext, err := os.ReadFile(source)
 
 	if err != nil {
 		return false, err
