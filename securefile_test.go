@@ -19,24 +19,3 @@ func TestDecryption(t *testing.T) {
 		t.Error(err)
 	}
 }
-
-func TestCutExtension(t *testing.T) {
-	inName := "demo.pdf"
-	expected := "demo"
-
-	get := CutExtension(inName)
-
-	if get != expected {
-		t.Errorf("%s != %s", get, expected)
-	}
-}
-
-func TestCreateDecFileName(t *testing.T) {
-	expected := "demo_clean.pdf"
-	inName := "demo.pdf"
-
-	get := CreateDecFileName(inName)
-	if get != expected {
-		t.Errorf("%s != %s", get, expected)
-	}
-}

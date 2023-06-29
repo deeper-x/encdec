@@ -7,11 +7,8 @@ import (
 	"crypto/rand"
 	"crypto/sha1"
 	"encoding/hex"
-	"fmt"
 	"io"
 	"os"
-	"path/filepath"
-	"strings"
 
 	"golang.org/x/crypto/pbkdf2"
 )
@@ -121,8 +118,7 @@ func Decrypt(source string, password []byte) (bool, error) {
 	}
 
 	// build decrypted file
-	newName := CreateDecFileName(source)
-	f, err := os.Create(newName)
+	f, err := os.Create(source)
 	if err != nil {
 		return false, err
 	}
@@ -134,18 +130,4 @@ func Decrypt(source string, password []byte) (bool, error) {
 	}
 
 	return true, nil
-}
-
-// CutExtension remove extension from file name
-func CutExtension(fname string) string {
-	return strings.TrimSuffix(fname, filepath.Ext(fname))
-}
-
-// CreateDecFileName write filename with _clean.extension format
-func CreateDecFileName(fname string) string {
-	base := CutExtension(fname)
-	ext := filepath.Ext(fname)
-
-	return fmt.Sprintf("%s_clean%s", base, ext)
-
 }
