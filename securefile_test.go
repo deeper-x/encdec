@@ -26,28 +26,28 @@ func TestDecryption(t *testing.T) {
 
 func TestMultipleDecEnc(t *testing.T) {
 	for i := 0; i <= 1000; i++ {
-		log.Println("Encryption Nr.", i)
-		_, err := Encrypt("./assets/sample.pdf", []byte(""))
+		log.Println("Decryption Nr.", i)
+		_, err := Decrypt("./assets/sample.pdf", []byte(""))
 		if err != nil {
 			t.Error(err)
 		}
-
 		ftype, err := checkFileType("./assets/sample.pdf")
 		if err != nil {
 			t.Error(err)
 		}
-		log.Println("Encrypted file type is", ftype)
+		log.Println("Decrypted file type is", ftype)
 
-		log.Println("Decryption Nr.", i)
-		_, err = Decrypt("./assets/sample.pdf", []byte(""))
+		log.Println("Encryption Nr.", i)
+		_, err = Encrypt("./assets/sample.pdf", []byte(""))
 		if err != nil {
 			t.Error(err)
 		}
+
 		ftype, err = checkFileType("./assets/sample.pdf")
 		if err != nil {
 			t.Error(err)
 		}
-		log.Println("Decrypted file type is", ftype)
+		log.Println("Encrypted file type is", ftype)
 
 	}
 }
