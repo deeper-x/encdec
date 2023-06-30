@@ -26,7 +26,7 @@ func TestDecryption(t *testing.T) {
 
 func TestMultipleDecEnc(t *testing.T) {
 	for i := 0; i <= 1000; i++ {
-		log.Println("Encryption: ", i)
+		log.Println("Encryption Nr.", i)
 		_, err := Encrypt("./assets/sample.pdf", []byte(""))
 		if err != nil {
 			t.Error(err)
@@ -36,9 +36,9 @@ func TestMultipleDecEnc(t *testing.T) {
 		if err != nil {
 			t.Error(err)
 		}
-		log.Println("Encrypted type is", ftype)
+		log.Println("Encrypted file type is:", ftype)
 
-		log.Println("Decryption: ", i)
+		log.Println("Decryption Nr.", i)
 		_, err = Decrypt("./assets/sample.pdf", []byte(""))
 		if err != nil {
 			t.Error(err)
@@ -47,13 +47,15 @@ func TestMultipleDecEnc(t *testing.T) {
 		if err != nil {
 			t.Error(err)
 		}
-		log.Println("Decrypted type is", ftype)
+		log.Println("Decrypted file type is", ftype)
 
 	}
 }
 
 func checkFileType(inFile string) (string, error) {
 	buf, err := ioutil.ReadFile("./assets/sample.pdf")
+	res := "Unknown"
+
 	if err != nil {
 		return "", err
 	}
@@ -63,5 +65,9 @@ func checkFileType(inFile string) (string, error) {
 		return "", err
 	}
 
-	return ftype.MIME.Value, nil
+	if ftype.MIME.Value != "" {
+		res = ftype.MIME.Value
+	}
+
+	return res, nil
 }
