@@ -36,7 +36,7 @@ func TestMultipleDecEnc(t *testing.T) {
 		if err != nil {
 			t.Error(err)
 		}
-		log.Println("Encrypted file type is:", ftype)
+		log.Println("Encrypted file type is", ftype)
 
 		log.Println("Decryption Nr.", i)
 		_, err = Decrypt("./assets/sample.pdf", []byte(""))
