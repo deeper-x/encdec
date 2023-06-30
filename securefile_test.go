@@ -28,7 +28,7 @@ func TestMultipleDecEnc(t *testing.T) {
 		if err != nil {
 			t.Error(err)
 		}
-		log.Println("Descryption: ", i)
+		log.Println("Decryption: ", i)
 		_, err = Decrypt("./assets/sample.pdf", []byte(""))
 		if err != nil {
 			t.Error(err)
