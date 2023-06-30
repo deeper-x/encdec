@@ -7,7 +7,7 @@ import (
 
 func TestEncryption(t *testing.T) {
 	key := "test"
-	_, err := Encrypt("./assets/demo.png", []byte(key))
+	_, err := Encrypt("./assets/sample.pdf", []byte(key))
 	if err != nil {
 		t.Error(err)
 	}
@@ -15,7 +15,7 @@ func TestEncryption(t *testing.T) {
 
 func TestDecryption(t *testing.T) {
 	key := "test"
-	_, err := Decrypt("./assets/demo.png", []byte(key))
+	_, err := Decrypt("./assets/sample.pdf", []byte(key))
 	if err != nil {
 		t.Error(err)
 	}
